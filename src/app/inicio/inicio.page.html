@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first" color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title color="primary">Componentes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list>
+    <ion-item *ngFor="let c of componentes | async" [routerLink]="c.redirectTo" detail>
+      <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
+        {{c.name}}
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+    <ion-label>Damian Aaron Roca Urgiles</ion-label>
+  </ion-item>
+
+  <ion-button>Ingresar</ion-button> <ion-button [disabled]="true">Cerrar sesión</ion-button>
+
+  <ion-list>
+    <ion-item>
+      <ion-input label="Datos input"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="Escriba la nombre de la empresa" placeholder="Nombre de la empresa"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="Direccion" value="Guayakill, entrada de la 8"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="Readonly input" value="Perimetral sur" [readonly]="true"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="Codigo Postal" value="010901" [disabled]="true"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-input label="Default counter" labelPlacement="floating" [counter]="true" maxlength="20"></ion-input>
+
+  <ion-input
+  type="email"
+  fill="solid"
+  label="E-mail"
+  labelPlacement="floating"
+  helperText="E-mail valido"
+  errorText="E-mail invalido"
+  ngModel
+  email
+></ion-input>
+
+</ion-content>
